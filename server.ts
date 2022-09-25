@@ -34,3 +34,6 @@ uploadRouter.post(
     res.status(200).json(req.files);
   }
 );
+
+app.use(uploadRouter);
+app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
